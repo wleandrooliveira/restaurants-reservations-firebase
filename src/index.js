@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import firebase from 'firebase/app'
+import * as firebase from 'firebase/app';
 import 'firebase/analytics';
 import './index.css';
 import { App, serviceWorker } from './app';
@@ -8,18 +8,17 @@ import { App, serviceWorker } from './app';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
-// Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-  apiKey: "AIzaSyAnBXCTOxjwqxsuraQwrFM_fxcui8d4oZk",
-  authDomain: "restaurants-reservations-75a2a.firebaseapp.com",
-  projectId: "restaurants-reservations-75a2a",
-  storageBucket: "restaurants-reservations-75a2a.appspot.com",
-  messagingSenderId: "287216275235",
-  appId: "1:287216275235:web:8d9a09d616910b350a4696",
-  measurementId: "G-105EFR9F7H"
+  apiKey: "AIzaSyDXne4P39h2jDXJ9bE8Wc84XUlllRf3mhw",
+  authDomain: "restaurant-reservations-144e5.firebaseapp.com",
+  databaseURL: "https://restaurant-reservations-144e5.firebaseio.com",
+  projectId: "restaurant-reservations-144e5",
+  storageBucket: "restaurant-reservations-144e5.appspot.com",
+  messagingSenderId: "485604802640",
+  appId: "1:485604802640:web:5366bbb357e741e67d5155",
+  measurementId: "G-3DQ4Q3QZQC"
 };
-// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
