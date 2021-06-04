@@ -3,7 +3,9 @@ require('firebase/firestore');
 
 const { reservations, restaurants, dateAvailabilities, reviews } = require('./testData');
 
-var firebaseConfig = {
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
     apiKey: "AIzaSyAnBXCTOxjwqxsuraQwrFM_fxcui8d4oZk",
     authDomain: "restaurants-reservations-75a2a.firebaseapp.com",
     projectId: "restaurants-reservations-75a2a",

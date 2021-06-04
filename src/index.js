@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import 'firebase/analytics';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/functions';
 import './index.css';
 import { App, serviceWorker } from './app';
 
@@ -11,17 +12,20 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAnBXCTOxjwqxsuraQwrFM_fxcui8d4oZk",
-  authDomain: "restaurants-reservations-75a2a.firebaseapp.com",
-  projectId: "restaurants-reservations-75a2a",
-  storageBucket: "restaurants-reservations-75a2a.appspot.com",
-  messagingSenderId: "287216275235",
-  appId: "1:287216275235:web:8d9a09d616910b350a4696",
-  measurementId: "G-105EFR9F7H"
+  apiKey: "AIzaSyDXne4P39h2jDXJ9bE8Wc84XUlllRf3mhw",
+  authDomain: "restaurant-reservations-144e5.firebaseapp.com",
+  databaseURL: "https://restaurant-reservations-144e5.firebaseio.com",
+  projectId: "restaurant-reservations-144e5",
+  storageBucket: "restaurant-reservations-144e5.appspot.com",
+  messagingSenderId: "485604802640",
+  appId: "1:485604802640:web:5366bbb357e741e67d5155",
+  measurementId: "G-3DQ4Q3QZQC"
 };
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
+firebase.functions().useFunctionsEmulator('http://localhost:5001');
 
 // This is where the magic happens. React renders our App component
 // inside the div with the id "root"

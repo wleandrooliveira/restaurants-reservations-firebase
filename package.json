@@ -1,6 +1,7 @@
 {
   "name": "firebase-restaurants-reservations-app",
   "version": "0.1.0",
+  "proxy": "https://us-central1-restaurants-reservations-75a2a.cloudfunctions.net/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "4.9.14",
@@ -8,7 +9,7 @@
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.5.0",
     "@testing-library/user-event": "7.2.1",
-    "firebase": "^8.6.3",
+    "firebase": "^7.14.4",
     "isemail": "3.2.0",
     "moment": "2.25.3",
     "react": "^16.13.1",
@@ -23,7 +24,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "functions:build": "npm run build --prefix ./functions",
+    "functions:deploy": "npm run functions:build && firebase deploy --only functions",
+    "functions:watch": "nodemon --watch ./functions --ignore ./functions/build --exec 'npm run functions:build'",
+    "functions:dev": "concurrently 'npm run functions:watch' 'firebase emulators:start --only functions'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
   }
 }
